@@ -2,7 +2,7 @@
 using System.Linq;
 using System;
 using UnityEngine;
-public class Stroke_classifier : knn
+public class Stroke_classifier
 {
     private List<int> classes = new List<int>();
     private int max_sample;
@@ -29,6 +29,7 @@ public class Stroke_classifier : knn
             return;
         }
         xyratio.Add(xyratio_cal(inputStroke));
+
     }
 
 
