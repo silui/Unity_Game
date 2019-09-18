@@ -9,7 +9,9 @@ public class Stroke_classifier
     private bool trained = false;
     private int min_Stroke_Point = 5;
 
-    private List<double> xyratio = new List<double>();
+    public List<double> xyratio = new List<double>();
+    // public List<double>  = new List<double>();
+    
 
     public Stroke_classifier(int classcount, int sample_count)
     {
@@ -60,6 +62,13 @@ public class Stroke_classifier
             y_max = Math.Max(point.y, y_max);
         }
         return (x_max-x_min)/(y_max-y_min);
-
     }
+
+    public Vector2 vectorDirection(Vector2 initialPoint, Vector2 finalPoint)
+    {
+        float angle = Vector2.Angle(initialPoint, finalPoint);
+        Debug.Log(angle);
+        return new Vector2(angle,angle);
+    }
+
 }
